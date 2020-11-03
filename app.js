@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const expressHbs = require('express-handlebars')
 
 const app = express();
+const port = process.env.PORT || 3000
 
 app.engine(
     'hbs',
@@ -29,4 +30,4 @@ app.use((req ,res) => {
     res.status(404).render('404', { pageTitle : 'Page Not Found'});
 });
 
-app.listen(3000);
+app.listen(port);
